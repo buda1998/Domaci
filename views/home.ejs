@@ -1,0 +1,26 @@
+<%- include ('includes/head.ejs', { title: 'Home'})  %>
+
+</head>
+<body>
+  <%- include ('includes/header.ejs')  %>
+  <main>
+    <section id="start">
+      <div id="start-content">
+        <h1>
+          This page is very simple, it serves as your picture gallery, create
+          your own gallery.
+        </h1>
+        <a href="/create-gallery">Start your Gallery</a>
+      </div>
+    </section>
+    <section id="some-galleries">
+      <h2>Gallery</h2>
+      <ul>
+        <li class="gallery"></li>
+        <li class="gallery"></li>
+        <li class="gallery"></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

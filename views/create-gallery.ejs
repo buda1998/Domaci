@@ -1,0 +1,33 @@
+<%- include ('includes/head.ejs', { title: 'New Gallery'})  %>
+    <link rel="stylesheet" href="/styles/new-gallery.css" />
+    <title></title>
+  </head>
+  <body>
+    <%- include ('includes/header.ejs')  %>
+
+    <main id="new-folder">
+      <form
+        action="/create-gellery"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-control">
+          <label for="name-folder">Folder Name</label>
+          <input type="text" id="foldername" name="foldername" required />
+        </div>
+        <div class="form-control">
+          <img id="image-preview" src="" alt="Your picked image." />
+          <label for="image">User images</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            required
+            accept="image/*"
+          />
+        </div>
+        <button class="btn">Save Folder</button>
+      </form>
+    </main>
+  </body>
+</html>

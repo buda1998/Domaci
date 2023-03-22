@@ -1,0 +1,24 @@
+{
+  "name": "domaci",
+  "version": "1.0.0",
+  "description": "Gallery",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buda1998/Domaci.git"
+  },
+  "author": "Damjan Budimir",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
