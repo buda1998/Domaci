@@ -1,6 +1,8 @@
 <%- include ('includes/head.ejs', { title: 'Your Gallery'}) %> 
 <link rel="stylesheet" href="styles/shared.css" />
     <link rel="stylesheet" href="styles/stayle.css" />
+    <link rel="stylesheet" href="/styles/new-gallery.css" />
+    <link rel="stylesheet" href="/styles/user-gallery.css">
 </head>
 <body>
     <header id="main-header">
@@ -15,7 +17,22 @@
           </ul>
         </nav>
       </header>
-      <main></main>
+      <main>
+        <section id="user-profiles">
+          <ul>
+            <% for (const foldername of foldersname) { %>
+            <li class="user-item">
+              <article>
+                <img src="<%= foldername.imagePath  %>" alt="The image." />
+                <h2><%= foldername.name %></h2>
+              </article>
+            </li>
+            <% } %>
+          </ul>
+        </section>
+
+
+      </main>
     </body>
   </html>
 

@@ -1,18 +1,17 @@
 <%- include ('includes/head.ejs', { title: 'New Gallery'})  %>
     <link rel="stylesheet" href="/styles/new-gallery.css" />
-    <title></title>
   </head>
   <body>
     <%- include ('includes/header.ejs')  %>
 
     <main id="new-folder">
       <form
-        action="/create-gellery"
+        action="/your-gallery"
         method="POST"
         enctype="multipart/form-data"
       >
         <div class="form-control">
-          <label for="name-folder">Folder Name</label>
+          <label for="foldername">Folder Name</label>
           <input type="text" id="foldername" name="foldername" required />
         </div>
         <div class="form-control">

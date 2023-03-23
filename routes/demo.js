@@ -19,16 +19,28 @@ router.get("/", function (req, res) {
   res.render("home");
 });
 
+router.get("/home", function (req, res) {
+  res.render("home");
+});
+
 router.get("/create-gallery", function (req, res) {
   res.render("create-gallery");
 });
 
-router.get("/your-gallery", function (req, res) {
-  res.render("your-gallery");
+router.get("/your-gallery", async function (req, res) {
+  const foldername = await db.getDb().collection("foldername").find().toArray();
+  res.render("your-gallery", { foldersname: foldername });
 });
 
-router.get("/home", function (req, res) {
-  res.render("home");
+router.post("/your-gallery", upload.array("image"), async function (req, res) {
+  const uploadImageFiles = req.files;
+  const fileData = req.body;
+
+  await db.getDb().collection("filename").insertOne({
+    name: fileData.foldername,
+    imagePath: uploadImageFiles[0].path,
+  });
+  res.redirect("your-gallery");
 });
 
 module.exports = router;
